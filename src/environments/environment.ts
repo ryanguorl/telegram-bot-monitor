@@ -82,7 +82,8 @@ export const environment = {
     "video": "The message has been deleted because it contained video",
     "audio": "The message has been deleted because it contained audio",
     "url": "The message has been deleted because it contained external link (url)",
-    "warning": "Do not post messages with inappropriate content, Wallet address, audio, video or image. You will be banned if you post such message again"
+    "warning": "Do not post messages with inappropriate content, Wallet address, audio, video or image. You will be banned if you post such message again",
+    "enabled": false
   },
   "displayMessages": true,
   "validChars": {}
