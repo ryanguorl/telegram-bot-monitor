@@ -507,7 +507,7 @@ export class BotProcessor {
 
             let memberIdentifier = '@' + message.chatMemberFirstName + ' ' + message.chatMemberLastName + (message.chatMemberUserName ? ('(' + message.chatMemberUserName + ')') : '')
             
-            if (messageToSend !== '') {                
+            if (messageToSend !== '' && this.botConfigurator.getConfiguration().replyMessages.enabled) {                
                 this.botMessage.displayMessage(`Send message ${memberIdentifier}, ${messageToSend}`) 
 
                 this.botApiProcessor.telegram.sendMessage(this.botConfigurator.getConfiguration().chatId, memberIdentifier + ', ' + messageToSend).then(details => { 
@@ -517,7 +517,7 @@ export class BotProcessor {
                 })    
             }
 
-            if (warningToSend !== '') {
+            if (warningToSend !== '' && this.botConfigurator.getConfiguration().replyMessages.enabled) {
                 this.botMessage.displayMessage(`Send message ${memberIdentifier}, ${warningToSend}`) 
                 this.botApiProcessor.telegram.sendMessage(this.botConfigurator.getConfiguration().chatId, memberIdentifier + ', ' + warningToSend).then(details => { 
                     this.botMessage.displayMessage(JSON.stringify(details, null, 2)) 
